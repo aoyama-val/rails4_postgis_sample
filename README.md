@@ -41,6 +41,9 @@ rails4_postgis_sample=# \d my_spatial_table
 # WKTを使う方法
 record.lonlat = 'POINT(-122 47)'
 
-# RGeoのfactorを使う方法
+# RGeoのfactoryを使う方法
 record.lonlat = record.lonlat.factory.point(-122, 47)
+
+# factoryを取得する別の方法
+factory= RGeo::Geographic.spherical_factory(srid: 4326)
 ```
