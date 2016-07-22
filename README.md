@@ -36,3 +36,11 @@ rails4_postgis_sample=# \d my_spatial_table
 インデックス:
     "my_spatial_table_pkey" PRIMARY KEY, btree (id)
 ```
+
+```
+# WKTを使う方法
+record.lonlat = 'POINT(-122 47)'
+
+# RGeoのfactorを使う方法
+record.lonlat = record.lonlat.factory.point(-122, 47)
+```

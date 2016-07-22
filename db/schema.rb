@@ -24,7 +24,11 @@ ActiveRecord::Schema.define(version: 20160722154835) do
 
   create_table "points", force: :cascade do |t|
     t.string    "name"
-    t.geography "location", limit: {:srid=>4326, :type=>"point", :geographic=>true}, default: #<RGeo::Geographic::SphericalPointImpl:0x2b066f7a0a1c "POINT (0.0 0.0)">, null: false
+    t.geometry  "shape1",       limit: {:srid=>0, :type=>"geometry"}
+    t.geometry  "shape2",       limit: {:srid=>0, :type=>"geometry"}
+    t.geometry  "path",         limit: {:srid=>3785, :type=>"line_string"}
+    t.geography "lonlat",       limit: {:srid=>4326, :type=>"point", :geographic=>true}
+    t.geography "lonlatheight", limit: {:srid=>4326, :type=>"point", :has_z=>true, :geographic=>true}
   end
 
 end
